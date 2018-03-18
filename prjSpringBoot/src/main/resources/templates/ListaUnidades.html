@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>ListaVIP</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+	<div class="panel panel-default" style="margin: 10px">
+		<div class="panel-heading">
+			<h1 class="panel-title">Lista de unidades</h1>
+		</div>
+
+		<div class="panel-body">
+
+			<form class="form-inline" method="POST"  th:object="${unidade}" th:action="@{/cadastrar}" style="margin: 20px 0">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Nome: " th:field="*{nome}"/>
+					<input type="text" class="form-control" placeholder="Endereco: " th:field="*{endereco}"/>
+					<button type="submit" class="btn btn-primary">Adicionar</button>
+				</div>
+			</form>
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Nome</th>
+						<th>Endereco</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="unidade:${unidades}">
+						<td th:text="${unidade.id}"></td>
+						<td th:text="${unidade.nome}"></td>
+						<td th:text="${unidade.endereco}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

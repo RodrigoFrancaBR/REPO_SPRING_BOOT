@@ -1,0 +1,1 @@
+INSERT INTO UNIDADE (NOME, ENDERECO)VALUES ('Cascadura', 'Avenida Dom Helder Camara 5555'), ('Meier', 'Rua Ana Barbosa 34');
